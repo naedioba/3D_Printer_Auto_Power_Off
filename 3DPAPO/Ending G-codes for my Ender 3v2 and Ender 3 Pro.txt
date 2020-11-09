@@ -1,0 +1,36 @@
+; Ender 3v2 End G-code For Auto Power Off
+G91 ; Relative mode
+G0 Z5 ; Move Z axis up a little
+G90 ; Absolute mode
+G1 X0 Y{machine_depth} ; Move bed forward to present print 
+M140 S0 ; turn the bed off
+M84 ; Disable steppers
+M117 Cooling down ; Cooling down message
+M106 S255 ; Activate the cooling fan and set it to 255
+M109 R50.000000 ; Wait for the hot end tempreature to get down to 50 degrees
+M104 S0 ; Set extruder temperature to 0
+M106 S0 ; Stop the fan
+G0 X150 ; Move the hot end 150mm on the right
+G0 Z240 ; Move the hot end 240mm up toward the IR sensor
+
+
+====================================================================
+
+; Ender pro End G-code For Auto Power Off CURA
+G91 ; Relative mode
+G0 Z5 ; Move Z axis up a little
+G90 ; Absolute mode
+G1 X0 Y{machine_depth} ; Move bed forward to present print 
+M140 S0 ; turn the bed off
+M84 ; Disable steppers
+M117 Cooling down ; Cooling down message
+M106 S255 ; Activate the cooling fan and set it to 255
+M109 R50.000000 ; Wait for the hot end tempreature to get down to 50 degrees
+M104 S0 ; Set extruder temperature to 0
+M106 S0 ; Stop the fan
+G0 X150 ; Move the hot end 150mm on the right
+G0 Z240 ; Move the hot end 240mm up toward the IR sensor
+
+
+
+
